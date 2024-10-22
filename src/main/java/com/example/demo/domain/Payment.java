@@ -1,18 +1,26 @@
 package com.example.demo.domain;
 
+
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 import java.util.Date;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Entity
 public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentId;
+
     private BigDecimal amount;
     private Date paymentDate;
     private String paymentStatus;
+
+    public Payment() {
+    }
 
     public Payment(Long paymentId, BigDecimal amount, Date paymentDate, String paymentStatus) {
         this.paymentId = paymentId;

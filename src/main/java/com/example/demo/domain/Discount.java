@@ -7,8 +7,12 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
+
 public class Discount {
     private BigDecimal discountPercentage;
+
+    public Discount() {
+    }
 
     public Discount(BigDecimal discountPercentage) {
         this.discountPercentage = discountPercentage;
